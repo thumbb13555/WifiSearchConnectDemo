@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_SSID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="SSID"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_Level"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_BSSID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="BSSID"
+        app:layout_constraintEnd_toEndOf="@+id/textView_Level"
+        app:layout_constraintStart_toStartOf="@+id/textView_SSID"
+        app:layout_constraintTop_toBottomOf="@+id/textView_SSID" />
+
+    <TextView
+        android:id="@+id/textView_Cap"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Capabilities"
+        app:layout_constraintEnd_toEndOf="@+id/textView_Level"
+        app:layout_constraintStart_toStartOf="@+id/textView_BSSID"
+        app:layout_constraintTop_toBottomOf="@+id/textView_BSSID" />
+
+    <TextView
+        android:id="@+id/textView_Frequency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Frequency"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_Level"
+        app:layout_constraintStart_toStartOf="@+id/textView_BSSID"
+        app:layout_constraintTop_toBottomOf="@+id/textView_Cap" />
+
+    <TextView
+        android:id="@+id/textView_Level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Level"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView_BSSID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_SSID" />
+</androidx.constraintlayout.widget.ConstraintLayout>
