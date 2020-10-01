@@ -15,12 +15,16 @@ import java.util.List;
 class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     List<ScanResult> list = new ArrayList<>();
+    OnItemClick onItemClick;
 
     public void addItem(List<ScanResult> list){
         this.list = list;
         notifyDataSetChanged();
     }
 
+    public OnItemClick getOnItemClick() {
+        return onItemClick;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -51,11 +55,16 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
         holder.tvCap.setText("加密方式： "+scanResult.capabilities);
         holder.tvFren.setText("訊號頻率： "+scanResult.frequency);
         holder.tvLevel.setText("訊號強度： "+scanResult.level);
+        holder.itemView.setOnClickListener(v -> {onItemClick.onItemClick(scanResult);});
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    interface OnItemClick{
+        void onItemClick(ScanResult scanResult);
     }
 
 
