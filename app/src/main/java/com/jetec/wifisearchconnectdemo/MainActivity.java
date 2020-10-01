@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerViewAdapter.OnItemClick onItemClick = scanResult -> {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            connectWifiQ(scanResult.SSID, "0915027698");
+            connectWifiQ(scanResult.SSID, "12345678");
         } else {
             IntentFilter filter = new IntentFilter();
             filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
             filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
             filter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
             getApplicationContext().registerReceiver(wifiBroadcastReceiver,filter);
-            connectWifi(scanResult.SSID, "0915027698");
+            connectWifi(scanResult.SSID, "12345678");
         }
 
     };
